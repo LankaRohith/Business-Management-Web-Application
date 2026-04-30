@@ -12,10 +12,17 @@ import com.business.loginCredentials.AdminLogin;
 import com.business.services.ProductServices;
 
 @Controller
-public class HomeController 
+public class HomeController
 {
 	@Autowired
 	private ProductServices productServices;
+
+	@GetMapping("/")
+	public String index()
+	{
+		return "redirect:/home";
+	}
+
 	@GetMapping("/home")
 	public String home()
 	{
